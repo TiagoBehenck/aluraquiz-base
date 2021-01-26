@@ -1,10 +1,12 @@
-import styled from 'styled-components'
-import db from '../db.json'
+import styled from 'styled-components';
+import Head from 'next/head';
+import db from '../db.json';
 
-import QuizBackground from '../src/components/QuizBackground'
-import Widget from '../src/components/Widget'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
+import QuizBackground from '../src/components/QuizBackground';
+import QuizLogo from '../src/components/QuizLogo';
+import Widget from '../src/components/Widget';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -16,13 +18,16 @@ const QuizContainer = styled.div`
     margin: auto;
     padding: 15px;
   }
-`; 
+`;
 
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>AluraQuiz - Modelo Base</title>
+      </Head>
       <QuizContainer>
-        {/* <QuizLogo /> */}
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
